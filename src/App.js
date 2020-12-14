@@ -5,14 +5,7 @@ import Product from './Product.js'
 function App() {
 
 const productComponents = products.map(
-  product => {
-    return(
-      <Product
-        key={product.id} 
-        content={{name:product.name, price: product.price, description: product.description}}
-      />
-    );
-  }
+  product => <Product key={product.id} content={{name:product.name, price: product.price, description: product.description}}/>
 )
   return (
     <div>
