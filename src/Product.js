@@ -5,8 +5,11 @@ function Product(props){
         <div className="container">
             <div className="row teal">
                 <span className="flow-text col s12">{props.content.name}</span>
-                <span className="flow-text col s12">{props.content.price}$</span>
-                <span className="flow-text col s12">{props.content.description}</span>
+                <span className="flow-text col s12">
+                    {props.content.price.toLocaleString("en-US", {style:"currency", currency:"USD"})}-
+                    {props.content.description}
+                </span>
+                
             </div>
         </div>
     )

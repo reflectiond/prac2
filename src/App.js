@@ -4,7 +4,7 @@ import Product from './Product.js'
 
 function App() {
 
-const product = products.map(
+const productComponents = products.map(
   product => {
     return(
       <Product
@@ -16,7 +16,7 @@ const product = products.map(
 )
   return (
     <div>
-      {product}
+      {productComponents}
     </div>
   );
 }
