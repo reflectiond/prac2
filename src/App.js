@@ -1,13 +1,14 @@
 import './App.css';
 import Joke from './Joke.js'
+import jokesData from './JokesData'
 
 function App() {
+  const jokesComponents = jokesData.map(joke => 
+    <Joke key={joke.id} text={{question: joke.question, punchLine: joke.punchLine}}/>
+  );
   return (
     <div>
-      <Joke text={{
-        question:'What is a joke?',
-        punchLine:'It\'s a text',
-      }}/>
+      {jokesComponents}   
     </div>
   );
 }
