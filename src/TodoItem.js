@@ -9,14 +9,20 @@ function TodoItem(props) {
             </div>
             <button
               className="waves-effect waves-light btn-small col s4 m3 l3 push-s4 push-m4 push-l8"
-              onClick={() => props.EventHandler()}
+              onClick={() => props.deleteHandler()}
             >
               delete
             </button>
           </div>
         ) : (
           <div>
-            <div className="flow-text col s3 m3 l3">{props.content.text}</div>
+            <div className="flow-text col s3 m3 l12">{props.content.text}</div>
+            <button
+              className="waves-effect waves-light btn-small col s4 m3 l3 push-s4 push-m4 push-l8"
+              onClick={() => props.completeHandler()}
+            >
+              ready
+            </button>
           </div>
         )}
       </div>
