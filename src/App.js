@@ -39,7 +39,7 @@ function App() {
   //сохраняет текст
   function newItemTextChange(val){
     setNewText(val);
-    //почему-то не работает если ставлю вместо val state newText задержка появляется.
+    //надо как-то обойти асинхронное обновление состояний
     setTicket({id:newId,text:val,completed:false});
   }
   //добавляет сформированный объект (новый тикет) в общий список тикетов
@@ -49,15 +49,14 @@ function App() {
     tempArr.push(ticket);
     if (ticket.text){
       //формирует новый объект. сохраняет текст, присваевает новый id для него
-      
-      
       setTodos(tempArr);
-      handleSubmit();
+      setNewText('');
+      // handleSubmit();
     }
   }
-  function handleSubmit(){
-    setNewText('');
-  }
+  // function handleSubmit(){
+  //   setNewText('');
+  // }
   return (
     <div className="container">
     <div>{toDoData}</div>
