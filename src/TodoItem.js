@@ -4,25 +4,41 @@ function TodoItem(props) {
       <div className="row section">
         {props.content.completed ? (
           <div>
-            <div className="flow-text col s3 m3 l12">
+            <div className="flow-text col s12 m6 l8">
               <del>{props.content.text}</del>
             </div>
-            <button
-              className="waves-effect waves-light btn-small col s4 m3 l3 push-s4 push-m4 push-l8"
-              onClick={() => props.deleteHandler()}
-            >
-              delete
-            </button>
+            <div className="col s4 m6 l4">
+              <div className="row">
+                <button
+                  className="waves-effect waves-light btn-small col s4"
+                  onClick={() => props.completeHandler()}
+                >
+                  unready
+                </button>
+              </div>
+              <div className="row">
+                <button
+                  className="waves-effect waves-light btn-small col s4"
+                  onClick={() => props.deleteHandler()}
+                >
+                  delete
+                </button>
+              </div>
+            </div>
           </div>
         ) : (
           <div>
-            <div className="flow-text col s3 m3 l12">{props.content.text}</div>
-            <button
-              className="waves-effect waves-light btn-small col s4 m3 l3 push-s4 push-m4 push-l8"
-              onClick={() => props.completeHandler()}
-            >
-              ready
-            </button>
+            <div className="flow-text col s12 m6 l8">{props.content.text}</div>
+            <div className="col s4 m6 l4">
+              <div className="row">
+                <button
+                  className="waves-effect waves-light btn-small col s4"
+                  onClick={() => props.completeHandler()}
+                >
+                  ready
+                </button>
+              </div>
+            </div>
           </div>
         )}
       </div>
@@ -30,4 +46,5 @@ function TodoItem(props) {
     </div>
   );
 }
+
 export default TodoItem;

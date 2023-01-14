@@ -26,16 +26,25 @@ function App() {
     setTodos(todos.filter((localItem) => localItem.id !== item.id));
   }
   // помечает тикет как выполненный
+  // function markAsCompleteItem(item) {
+  //   const tempArr = todos.map((localItem) => {
+  //     if (localItem.id === item.id) {
+  //       localItem.completed = true;
+  //     }
+  //     return localItem;
+  //   });
+  //   console.log(tempArr);
+  //   setTodos(tempArr);
+  // }
   function markAsCompleteItem(item) {
     const tempArr = todos.map((localItem) => {
-      if (localItem.id === item.id) {
-        localItem.completed = true;
-      }
-      return localItem;
+        if (localItem.id === item.id) {
+            localItem.completed = !localItem.completed;
+        }
+        return localItem;
     });
-    console.log(tempArr);
     setTodos(tempArr);
-  }
+}
   //сохраняет текст
   function newItemTextChange(val){
     setNewText(val);
@@ -54,9 +63,7 @@ function App() {
       // handleSubmit();
     }
   }
-  // function handleSubmit(){
-  //   setNewText('');
-  // }
+
   return (
     <div className="container">
     <div>{toDoData}</div>
